@@ -1,11 +1,11 @@
 tasks:
-  - before: printf "$(date -Ins) $GITPOD_WORKSPACE_ID\n" >> /workspace/.before1
-    init: printf "$(date -Ins) $GITPOD_WORKSPACE_ID\n" >> /workspace/.init1
-    prebuild: printf "$(date -Ins) $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild1
+  - before: printf "$(date -Ins) BEFORE-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.before1
+    init: printf "$(date -Ins) INIT-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init1
+    prebuild: printf "$(date -Ins) PREBUILD-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild1
   - openMode: split-right
-    before: printf "$(date -Ins) $GITPOD_WORKSPACE_ID\n" >> /workspace/.before2
-    init: printf "$(date -Ins) $GITPOD_WORKSPACE_ID\n" >> /workspace/.init2
-    prebuild: printf "$(date -Ins) $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild2
+    before: printf "$(date -Ins) BEFORE-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.before2
+    init: printf "$(date -Ins) INIT-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init2
+    prebuild: printf "$(date -Ins) PREBUILD-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild2
     command: cat /workspace/.{before,init,prebuild}{1,2} | sort
 
 github:
