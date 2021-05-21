@@ -3,7 +3,7 @@ tasks:
     init: printf "$(date -Ins) INIT-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init1
     prebuild: printf "$(date -Ins) PREBUILD-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild1
   - before: printf "$(date -Ins) BEFORE-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.before2
-    init: printf "$(date -Ins) INIT-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init2
+    init: echo "test"; printf "$(date -Ins) INIT-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init2
     prebuild: printf "$(date -Ins) PREBUILD-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild2
     command: cat /workspace/.{before,init,prebuild}{1,2} | sort
 
