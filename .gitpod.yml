@@ -4,7 +4,7 @@ tasks:
     prebuild: printf "$(date -Ins) PREBUILD-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild1
   - command: echo "🙈"
   - before: printf "$(date -Ins) BEFORE-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.before2
-    init: printf "$(date -Ins) INIT-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init2
+    init: git grep init && sleep 70 && git grep add && printf "$(date -Ins) INIT-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init2
     prebuild: printf "$(date -Ins) PREBUILD-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild2
     command: cat /workspace/.{before,init,prebuild}{1,2} | sort
 
