@@ -1,6 +1,6 @@
 tasks:
   - before: printf "$(date -Ins) BEFORE-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.before1
-    init: printf "$(date -Ins) INIT-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init1
+    init: printf "$(date -Ins) INIT-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.init1 && AAAH
     prebuild: printf "$(date -Ins) PREBUILD-1 $GITPOD_WORKSPACE_ID\n" >> /workspace/.prebuild1
   - command: echo "📚"
   - before: printf "$(date -Ins) BEFORE-2 $GITPOD_WORKSPACE_ID\n" >> /workspace/.before2
